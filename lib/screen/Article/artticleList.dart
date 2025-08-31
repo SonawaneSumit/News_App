@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:algoocean_news/controllers/articleController.dart';
 import 'package:algoocean_news/screen/Article/articleWebView.dart';
 import 'package:algoocean_news/utils/apptheme.dart';
@@ -22,7 +24,6 @@ class _article_listState extends State<article_list> {
     try {
       DateTime dateTime = DateTime.parse(dateStr); // Parse ISO8601 string
       return DateFormat("dd MMM yyyy").format(dateTime);
-      // Example: 31 Aug 2025, 06:00 PM
     } catch (e) {
       return "Invalid Date";
     }
@@ -54,7 +55,6 @@ class _article_listState extends State<article_list> {
                   leading: const Icon(Icons.search),
                   onChanged: (value) {
                     articleController.newswithFilter(value);
-                    // controller.openView();
                   },
                 );
               }, suggestionsBuilder:
@@ -77,7 +77,7 @@ class _article_listState extends State<article_list> {
                         itemBuilder: (context, index) {
                           if (index == articleController.results.length) {
                             return Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Center(
                                   child: CircularProgressIndicator(
                                 color: Apptheme.primary,
@@ -131,12 +131,6 @@ class _article_listState extends State<article_list> {
                                           fontWeight: FontWeight.bold,
                                         ),
                                         textAlign: TextAlign.center,
-
-                                        // const TextStyle(
-                                        //   fontSize: 16,
-                                        //   fontWeight: FontWeight.bold,
-                                        // ),
-                                        // textAlign: TextAlign.center,
                                       ),
                                       const SizedBox(
                                         height: 15,
@@ -146,8 +140,7 @@ class _article_listState extends State<article_list> {
                                           style: const TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w400,
-                                            color: Colors
-                                                .black, // Default text color
+                                            color: Colors.black,
                                           ),
                                           children: [
                                             TextSpan(
@@ -159,9 +152,7 @@ class _article_listState extends State<article_list> {
                                                   decoration:
                                                       TextDecoration.underline,
                                                 )),
-                                            const TextSpan(
-                                                text:
-                                                    " "), // add space before "Read More"
+                                            const TextSpan(text: " "),
                                             WidgetSpan(
                                               child: GestureDetector(
                                                 onTap: () {
@@ -192,8 +183,6 @@ class _article_listState extends State<article_list> {
                                         height: 15,
                                       ),
                                       Row(
-                                        // mainAxisAlignment:
-                                        //     MainAxisAlignment.spaceAround,
                                         children: [
                                           const Icon(Icons.remove),
                                           Expanded(
@@ -215,9 +204,6 @@ class _article_listState extends State<article_list> {
                                             child: Text(
                                               _formatDate(articleController
                                                   .results[index]["pub_date"]),
-                                              // articleController.results[index]
-                                              //         ["pub_date"] ??
-                                              //     "No Author",
                                               style: const TextStyle(
                                                   fontSize: 14,
                                                   fontWeight: FontWeight.bold),

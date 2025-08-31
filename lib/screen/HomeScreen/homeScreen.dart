@@ -3,40 +3,11 @@ import 'package:algoocean_news/screen/Article/articleWebView.dart';
 import 'package:algoocean_news/utils/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-// enum ExerciseFilter {
-//   home,
-//   arts,
-//   automobiles,
-//   business,
-//   fashion,
-//   food,
-//   health,
-//   insider,
-//   magazine,
-//   movies,
-//   nyregion,
-//   obituaries,
-//   opinion,
-//   politics,
-//   realestate,
-//   science,
-//   sports,
-//   sundayreview,
-//   technology,
-//   theater,
-//   tmagazine,
-//   travel,
-//   upshot,
-//   us,
-//   world
-// }
 
 class HomeScreen extends StatefulWidget {
   final bool category;
-  HomeScreen({super.key, this.category = false});
+  const HomeScreen({super.key, this.category = false});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -58,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ? AppBar(
               backgroundColor: Apptheme.primary,
               centerTitle: true,
-              iconTheme: IconThemeData(color: Colors.white),
+              iconTheme: const IconThemeData(color: Colors.white),
               title: Image.asset(
                 "assets/App_logo.png",
                 color: Colors.white,
@@ -76,61 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         child: Column(
           children: [
-            // SingleChildScrollView(
-            //   scrollDirection: Axis.horizontal,
-            //   child: Row(
-            //     children: [
-            //       Padding(
-            //         padding: const EdgeInsets.all(8.0),
-            //         child: Obx(
-            //           () => Wrap(
-            //             direction: Axis.horizontal,
-            //             spacing: 7.0,
-            //             children: ExerciseFilter.values
-            //                 .map((ExerciseFilter exercise) {
-            //               return FilterChip(
-            //                 label: Text(exercise.name),
-            //                 shape: RoundedRectangleBorder(
-            //                   side: BorderSide(color: Colors.grey.shade400),
-            //                   borderRadius: BorderRadius.circular(20.0),
-            //                 ),
-            //                 labelStyle: TextStyle(
-            //                   color: homecontroller.selectedFilter.value ==
-            //                           exercise
-            //                       ? Colors.white
-            //                       : Colors.black,
-            //                 ),
-            //                 selected: /* filters.contains(exercise) */
-            //                     homecontroller.selectedFilter.value == exercise,
-            //                 showCheckmark: false,
-            //                 elevation: 3,
-            //                 selectedColor: Apptheme.primary.withOpacity(0.8),
-            //                 backgroundColor: Colors.white,
-            //                 onSelected: (bool selected) {
-            //                   // setState(() {
-            //                   homecontroller.selectedFilter.value =
-            //                       selected ? exercise : null;
-            //                   homecontroller.newswithFilter(exercise.name);
-            //                   print(exercise.name);
-            //                   // if (selected) {
-            //                   //   filters.add(exercise);
-            //                   // }
-            //                   // } else {
-            //                   //   filters.remove(exercise);
-            //                   // }
-            //                   // });
-            //                 },
-            //               );
-            //             }).toList(),
-            //           ),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            // const Divider(
-            //   height: 1,
-            // ),
             Expanded(
                 child: Obx(
               () => homecontroller.loadingD.value == true
@@ -141,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   : ListView.builder(
                       shrinkWrap: true,
-                      // physics: const NeverScrollableScrollPhysics(),
                       itemCount: homecontroller.results.length,
                       itemBuilder: (context, index) {
                         print(
@@ -206,12 +121,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                         children: [
                                           Row(
                                             children: [
-                                              Icon(Icons.loyalty_outlined),
+                                              const Icon(
+                                                  Icons.loyalty_outlined),
                                               Container(
-                                                // height: 20,
-                                                // width: 20,
-                                                margin: EdgeInsets.all(5.0),
-
+                                                margin:
+                                                    const EdgeInsets.all(5.0),
                                                 decoration: BoxDecoration(
                                                   color: Apptheme.secondary,
                                                   borderRadius:
@@ -226,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           bottom: 2.0),
                                                   child: Text(
                                                     news["section"] ?? "",
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                         fontWeight:
                                                             FontWeight.w400),
                                                   ),
@@ -238,19 +152,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                               style: GoogleFonts.inter(
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.bold,
-                                              )
-                                              // const TextStyle(
-                                              //   fontSize: 14,
-                                              //   fontWeight: FontWeight.bold,
-                                              // ),
-                                              ),
+                                              )),
                                           InkWell(
                                             onTap: () {
                                               Get.to(() => ArticleWebView(
                                                     url: news["url"],
                                                   ));
-                                              // homecontroller.launchURL(
-                                              //     url: news["url"] ?? "");
                                             },
                                             child: Text(
                                               "Read More",
@@ -281,11 +188,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ],
                                       ),
                                     ),
-                                    // Image.asset(
-                                    //   "assets/Flash.jpg",
-                                    //   height: 100,
-                                    //   width: 100,
-                                    // )
                                   ],
                                 ),
                               ),

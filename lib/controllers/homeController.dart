@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:convert';
 
 import 'package:get/get.dart';
@@ -34,21 +36,18 @@ enum ExerciseFilter {
 class HomeController extends GetxController {
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     newswithFilter(ExerciseFilter.values.first.name);
   }
 
   var loadingD = false.obs;
-  // reactive selected filter
   var selectedFilter = Rxn<ExerciseFilter>();
   List<dynamic> results = [].obs;
-  // var selectedFilter = Rxn<ExerciseFilter?>();
 
   void selectFilter(ExerciseFilter? filter) {
     selectedFilter.value = filter;
     if (filter != null) {
-      print("Selected filter: ${filter.name}"); // for API call
+      print("Selected filter: ${filter.name}");
     }
   }
 
@@ -62,9 +61,10 @@ class HomeController extends GetxController {
 
       if (response.statusCode == 200) {
         var resbody = jsonDecode(response.body);
-        // results = resbody["results"];
         results.assignAll(resbody["results"]);
         print(response.body);
+      } else {
+        print("Failed to load news: ${response.body}");
       }
     } catch (e) {
       print("Error fetching news: $e");

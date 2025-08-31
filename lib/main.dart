@@ -1,5 +1,4 @@
 import 'package:algoocean_news/screen/splashScreen.dart';
-import 'package:algoocean_news/utils/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,11 +20,10 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey.shade400,
-          // backgroundColor: Apptheme.primary,
           showUnselectedLabels: true,
         ),
       ),
-      home: splash_screen(),
+      home: const splash_screen(),
     );
   }
 }

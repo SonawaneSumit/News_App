@@ -25,7 +25,6 @@ class article_controller extends GetxController {
             scroll_Controller.position.maxScrollExtent - 200 &&
         !loadingPage.value &&
         hasMore.value) {
-      // Trigger pagination when near bottom
       print("load more data");
       newswithFilter(currentQuery.value, loadMore: true);
     }
@@ -36,23 +35,11 @@ class article_controller extends GetxController {
   var loadingPage = false.obs;
   List<dynamic> results = [].obs;
   var hasMore = true.obs;
-  // static var isMoreLoading = false.obs;
   var page = 0;
 
   final ScrollController scroll_Controller = ScrollController();
 
   Future<void> newswithFilter(var searchitem, {bool loadMore = false}) async {
-    // currentQuery.value = searchitem;
-    // if (loadMore) {
-    //   loadingPage.value = true;
-    //   page++;
-    // } else {
-    //   loadingD.value = true;
-    //   page = 0;
-    //   results.clear();
-    //   hasMore.value = true;
-    // }
-
     bool isNewSearch = searchitem != currentQuery.value;
 
     if (isNewSearch) {
@@ -79,7 +66,6 @@ class article_controller extends GetxController {
       if (response.statusCode == 200) {
         var resbody = jsonDecode(response.body);
 
-        // results.assignAll(resbody["response"]["docs"]);
         var docs = resbody["response"]["docs"] as List;
         if (docs.isEmpty) {
           hasMore.value = false;

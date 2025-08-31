@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, avoid_print, non_constant_identifier_names
 
 import 'package:algoocean_news/screen/Article/artticleList.dart';
 import 'package:algoocean_news/screen/HomeScreen/homeScreen.dart';
@@ -60,7 +60,6 @@ class _dashboardState extends State<dashboard> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",
-            // backgroundColor: Apptheme.primary,
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.category), label: "Category"),

@@ -3,7 +3,6 @@
 import 'package:algoocean_news/controllers/homeController.dart';
 import 'package:algoocean_news/screen/HomeScreen/homeScreen.dart';
 import 'package:algoocean_news/utils/apptheme.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,7 +39,7 @@ class _categoryScreenState extends State<categoryScreen> {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Obx(
@@ -57,11 +56,10 @@ class _categoryScreenState extends State<categoryScreen> {
                       itemCount: ExerciseFilter.values.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 3, // 🔹 Two columns
-                        crossAxisSpacing: 0, // space between columns
-                        mainAxisSpacing: 11, // space between rows
-                        childAspectRatio:
-                            2.5, // 🔹 Adjust height/width of each item
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 0,
+                        mainAxisSpacing: 11,
+                        childAspectRatio: 2.5,
                       ),
                       itemBuilder: (context, index) {
                         return Center(
@@ -85,13 +83,7 @@ class _categoryScreenState extends State<categoryScreen> {
                                       color: Colors.black87,
                                       fontSize: 12,
                                       fontWeight: FontWeight.w500,
-                                    )
-                                    //  const TextStyle(
-                                    //   color: Colors.black87,
-                                    //   fontSize: 12,
-                                    //   fontWeight: FontWeight.w500,
-                                    // ),
-                                    ),
+                                    )),
                               ),
                             ),
                           ),
@@ -99,55 +91,11 @@ class _categoryScreenState extends State<categoryScreen> {
                             await homecontroller.newswithFilter(
                                 ExerciseFilter.values[index].name);
                             Get.to(() => HomeScreen(category: true));
-                            // homecontroller.newswithFilter("science");
                           },
                         ));
                       }),
             ),
           ),
-          // Wrap(
-          //   direction: Axis.horizontal,
-          //   spacing: 7.0,
-          //   children: ExerciseFilter.values.map((ExerciseFilter exercise) {
-          //     return Padding(
-          //       padding: const EdgeInsets.all(8.0),
-          //       child: FilterChip(
-          //         padding: const EdgeInsets.all(17.0),
-          //         label: Text(exercise.name),
-          //         shape: RoundedRectangleBorder(
-          //           side: BorderSide(color: Colors.grey.shade400),
-          //           borderRadius: BorderRadius.circular(20.0),
-          //         ),
-          //         labelStyle: TextStyle(
-          //           fontSize: 14,
-          //           color: homecontroller.selectedFilter.value == exercise
-          //               ? Colors.white
-          //               : Colors.black,
-          //         ),
-          //         selected: /* filters.contains(exercise) */
-          //             homecontroller.selectedFilter.value == exercise,
-          //         showCheckmark: false,
-          //         elevation: 3,
-          //         selectedColor: Apptheme.primary.withOpacity(0.8),
-          //         backgroundColor: Colors.white,
-          //         onSelected: (bool selected) {
-          //           // setState(() {
-          //           homecontroller.selectedFilter.value =
-          //               selected ? exercise : null;
-          //           homecontroller.newswithFilter(exercise.name);
-          //           print(exercise.name);
-          //           // if (selected) {
-          //           //   filters.add(exercise);
-          //           // }
-          //           // } else {
-          //           //   filters.remove(exercise);
-          //           // }
-          //           // });
-          //         },
-          //       ),
-          //     );
-          //   }).toList(),
-          // ),
         ],
       ),
     );
