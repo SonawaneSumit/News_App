@@ -1,6 +1,6 @@
-import 'package:algoocean_news/controllers/homeController.dart';
-import 'package:algoocean_news/screen/Article/articleWebView.dart';
-import 'package:algoocean_news/utils/apptheme.dart';
+import 'package:new_york_news/controllers/homeController.dart';
+import 'package:new_york_news/screen/Article/articleWebView.dart';
+import 'package:new_york_news/utils/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,10 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
               centerTitle: true,
               iconTheme: const IconThemeData(color: Colors.white),
               title: Image.asset(
-                "assets/App_logo.png",
+                "assets/NYT_Logo.png",
                 color: Colors.white,
                 alignment: Alignment.center,
-                height: 40,
+                // height: 120,
+                width: 140,
                 fit: BoxFit.contain,
               ),
             )

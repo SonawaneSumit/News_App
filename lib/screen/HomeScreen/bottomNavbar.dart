@@ -1,9 +1,9 @@
 // ignore_for_file: camel_case_types, avoid_print, non_constant_identifier_names
 
-import 'package:algoocean_news/screen/Article/artticleList.dart';
-import 'package:algoocean_news/screen/HomeScreen/homeScreen.dart';
-import 'package:algoocean_news/screen/category/category.dart';
-import 'package:algoocean_news/utils/apptheme.dart';
+import 'package:new_york_news/screen/Article/artticleList.dart';
+import 'package:new_york_news/screen/HomeScreen/homeScreen.dart';
+import 'package:new_york_news/screen/category/category.dart';
+import 'package:new_york_news/utils/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -32,18 +32,13 @@ class _dashboardState extends State<dashboard> {
         title: Column(
           children: [
             Image.asset(
-              "assets/App_logo.png",
+              "assets/NYT_Logo.png",
               color: Colors.white,
               alignment: Alignment.center,
-              height: 30,
-              width: 30,
-              fit: BoxFit.contain,
+              // height: 30,
+              width: 140,
+              fit: BoxFit.cover,
             ),
-            Text("Algoocean News",
-                style: GoogleFonts.inter(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500)),
           ],
         ),
       ),

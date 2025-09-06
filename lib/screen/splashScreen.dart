@@ -2,7 +2,7 @@
 
 import 'dart:async';
 
-import 'package:algoocean_news/screen/HomeScreen/bottomNavbar.dart';
+import 'package:new_york_news/screen/HomeScreen/bottomNavbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -87,21 +87,26 @@ class _splash_screenState extends State<splash_screen>
                     child: Container(
                       alignment: Alignment.center,
                       padding: const EdgeInsets.all(8.0),
-                      child: AnimatedBuilder(
-                        animation: _controller,
-                        builder: (context, child) {
-                          return Transform(
-                            transform: Matrix4.rotationY(_rotation),
-                            alignment: Alignment.center,
-                            child: child,
-                          );
-                        },
-                        child: Image.asset(
-                          "assets/App_logo.png",
-                          height: 200,
-                          width: 150,
-                        ),
+                      child: Image.asset(
+                        "assets/NYT_Logo.png",
+                        height: 200,
+                        width: 150,
                       ),
+                      // AnimatedBuilder(
+                      //   animation: _controller,
+                      //   builder: (context, child) {
+                      //     return Transform(
+                      //       transform: Matrix4.rotationY(_rotation),
+                      //       alignment: Alignment.center,
+                      //       child: child,
+                      //     );
+                      //   },
+                      //   child: Image.asset(
+                      //     "assets/NYT_Logo.png",
+                      //     height: 200,
+                      //     width: 150,
+                      //   ),
+                      // ),
                     ),
                   ),
                 ),

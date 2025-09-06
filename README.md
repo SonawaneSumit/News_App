@@ -1,4 +1,4 @@
-# algoocean_news
+# news_app
 
 A Flutter application that fetches news articles from a public news API and presents them in a user-friendly interface.  
 The app allows users to browse through different categories of news, view detailed articles, and experience smooth navigation with efficient API handling.

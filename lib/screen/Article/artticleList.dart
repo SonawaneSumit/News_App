@@ -1,8 +1,8 @@
 // ignore_for_file: camel_case_types
 
-import 'package:algoocean_news/controllers/articleController.dart';
-import 'package:algoocean_news/screen/Article/articleWebView.dart';
-import 'package:algoocean_news/utils/apptheme.dart';
+import 'package:new_york_news/controllers/articleController.dart';
+import 'package:new_york_news/screen/Article/articleWebView.dart';
+import 'package:new_york_news/utils/apptheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
