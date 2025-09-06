@@ -28,9 +28,9 @@ The app allows users to browse through different categories of news, view detail
 
 _(You can add screenshots here for better presentation)_  
 Example:  
-![Home Screen](assets/Home_screen.jpeg)  
-![Category Screen](assets/Category_screen.jpeg)  
-![Article Screen](assets/Article_screen.jpeg)
+![Home screen](assets/Home_screen.jpeg)  
+![Category screen](assets/Category_screen.jpeg)  
+![Article screen](assets/Article_screen.jpeg)
 
 ---
 
